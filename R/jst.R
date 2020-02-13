@@ -72,7 +72,7 @@ is.JST.result <- function(x) {
 #' model <- jst(quanteda::dfm(quanteda::data_corpus_irishbudget2010),
 #'              paradigm(),
 #'              numTopics = 5,
-#'              numIters = 150)
+#'              numIters = 15) # Use more in practice!
 #' @export
 jst <- function(dfm,
                 sentiLexInput = NULL,
@@ -184,7 +184,8 @@ jst <- function(dfm,
       phi.termScores = phi.termScores,
       numTopics = numTopics,
       numSentiments = numSentiLabs,
-      docvars = quanteda::docvars(dfm)
+      docvars = data.frame(quanteda::docvars(dfm), row.names = docID,
+                           stringsAsFactors = FALSE)
     )
   )
 }

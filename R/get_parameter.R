@@ -64,8 +64,7 @@ get_parameter.JST_reversed.result.pi <- function(x) {
 
 get_parameter.JST_reversed.result.theta <- function(x) {
   if (length(x@docvars) > 0) {
-    docID <- rownames(x@theta)
-    res <- cbind(docID, x@docvars, x@theta)
+    res <- cbind(x@docvars, x@theta)
   } else {
     res <- x@theta
   }
@@ -95,9 +94,8 @@ get_parameter.JST_reversed.result.phi <- function(x) {
 }
 
 get_parameter.JST.result.pi <- function(x) {
-  if (length(x@docvars > 0)) {
+  if (length(x@docvars) > 0) {
     docvars <- x@docvars
-    docvars$docID <- rownames(docvars)
 
     res <- cbind(docvars, x@pi)
   } else {
@@ -107,7 +105,7 @@ get_parameter.JST.result.pi <- function(x) {
 }
 
 get_parameter.JST.result.theta <- function(x) {
-  if (length(x@docvars > 0)) {
+  if (length(x@docvars) > 0) {
     docvars <- x@docvars
     docvars$docID <- rownames(docvars)
 

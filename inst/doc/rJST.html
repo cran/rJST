@@ -348,12 +348,12 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>The second aspect is study of the model parameters. The <code>get_parameter</code> returns a useable data.frame with the relevant parameter values.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>pi &lt;-<span class="st"> </span><span class="kw">get_parameter</span>(model,<span class="st">&#39;pi&#39;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a>pi[pi<span class="op">$</span>President <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Bush&#39;</span>,<span class="st">&#39;Obama&#39;</span>,<span class="st">&#39;Trump&#39;</span>) <span class="op">&amp;</span><span class="st"> </span>pi<span class="op">$</span>Year <span class="op">&gt;</span><span class="st"> </span><span class="dv">2000</span>,]</span></code></pre></div>
-<pre><code>##            Year President FirstName      docID     sent1     sent2
-## 2001-Bush  2001      Bush George W.  2001-Bush 0.2915982 0.4024944
-## 2005-Bush  2005      Bush George W.  2005-Bush 0.2640296 0.4865311
-## 2009-Obama 2009     Obama    Barack 2009-Obama 0.3390308 0.3235663
-## 2013-Obama 2013     Obama    Barack 2013-Obama 0.2986693 0.3400821
-## 2017-Trump 2017     Trump Donald J. 2017-Trump 0.4677731 0.2921340
+<pre><code>##            Year President FirstName      Party     sent1     sent2
+## 2001-Bush  2001      Bush George W. Republican 0.2915982 0.4024944
+## 2005-Bush  2005      Bush George W. Republican 0.2640296 0.4865311
+## 2009-Obama 2009     Obama    Barack Democratic 0.3390308 0.3235663
+## 2013-Obama 2013     Obama    Barack Democratic 0.2986693 0.3400821
+## 2017-Trump 2017     Trump Donald J. Republican 0.4677731 0.2921340
 ##                sent3
 ## 2001-Bush  0.3059074
 ## 2005-Bush  0.2494393
